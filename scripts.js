@@ -239,49 +239,49 @@
     }
   };
 
-  const seoBaseUrl = "https://tengoaceventura.ge/";
+  const seoBaseUrl = "https://gogeorgia.vip/";
   const seoImage = "https://images.unsplash.com/photo-1565008576549-57569a49371d?auto=format&fit=crop&w=1200&h=630&q=85";
   const seoContent = {
     en: {
-      title: "Tengo Ace Ventura | Georgia Tours, Bus Rental and Transfers",
+      title: "Go Georgia | Georgia Tours, Bus Rental and Transfers",
       description: "Private Georgia tours by bus and crossover, bus rental, car with driver, transfers from Tbilisi, Kazbegi, Kakheti, Mtskheta and custom routes.",
       keywords: "Georgia tours, Tbilisi tours, Kazbegi tour, Kakheti wine tour, Mtskheta tour, Georgian Military Road, bus rental Georgia, car with driver Georgia, Tbilisi transfer, private tours Georgia",
       locale: "en_US"
     },
     ka: {
-      title: "Tengo Ace Ventura | ტურები საქართველოში და ტრანსპორტის ქირაობა",
+      title: "Go Georgia | ტურები საქართველოში და ტრანსპორტის ქირაობა",
       description: "ტურები საქართველოში ავტობუსით და კროსოვერით, ავტობუსის ქირაობა, მანქანა მძღოლით, ტრანსფერები თბილისიდან, ყაზბეგი, კახეთი და მცხეთა.",
       keywords: "ტურები საქართველოში, ტურები თბილისიდან, ყაზბეგის ტური, კახეთის ტური, მცხეთის ტური, ავტობუსის ქირაობა საქართველოში, მანქანა მძღოლით, ტრანსფერი თბილისი",
       locale: "ka_GE"
     },
     ru: {
-      title: "Tengo Ace Ventura | Туры по Грузии, аренда автобуса и трансферы",
+      title: "Go Georgia | Туры по Грузии, аренда автобуса и трансферы",
       description: "Туры по Грузии на автобусах и кроссоверах, аренда автобуса, машина с водителем, трансферы из Тбилиси, Казбеги, Кахетия, Мцхета и индивидуальные маршруты.",
       keywords: "туры по Грузии, туры из Тбилиси, Казбеги тур, Кахетия тур, Мцхета тур, Военно-Грузинская дорога, аренда автобуса Грузия, машина с водителем Грузия, трансфер Тбилиси",
       locale: "ru_RU"
     },
     az: {
-      title: "Tengo Ace Ventura | Gürcüstan turları və nəqliyyat icarəsi",
+      title: "Go Georgia | Gürcüstan turları və nəqliyyat icarəsi",
       description: "Gürcüstanda avtobus və krossover turları, avtobus icarəsi, sürücülü avtomobil, Tbilisidən transferlər, Kazbegi, Kaxeti və Mtsxeta marşrutları.",
       keywords: "Gürcüstan turları, Tbilisi turları, Kazbegi turu, Kaxeti turu, Mtsxeta turu, Gürcüstanda avtobus icarəsi, sürücülü avtomobil, Tbilisi transfer",
       locale: "az_AZ"
     },
     uk: {
-      title: "Tengo Ace Ventura | Тури Грузією, оренда автобуса і трансфери",
+      title: "Go Georgia | Тури Грузією, оренда автобуса і трансфери",
       description: "Тури Грузією автобусами та кросоверами, оренда автобуса, авто з водієм, трансфери з Тбілісі, Казбегі, Кахетія, Мцхета та індивідуальні маршрути.",
       keywords: "тури Грузією, тури з Тбілісі, Казбегі тур, Кахетія тур, Мцхета тур, оренда автобуса Грузія, авто з водієм Грузія, трансфер Тбілісі",
       locale: "uk_UA"
     },
     be: {
-      title: "Tengo Ace Ventura | Туры па Грузіі, арэнда аўтобуса і трансферы",
+      title: "Go Georgia | Туры па Грузіі, арэнда аўтобуса і трансферы",
       description: "Туры па Грузіі на аўтобусах і красоверах, арэнда аўтобуса, машына з кіроўцам, трансферы з Тбілісі, Казбегі, Кахеція і Мцхета.",
       keywords: "туры па Грузіі, туры з Тбілісі, Казбегі тур, Кахеція тур, Мцхета тур, арэнда аўтобуса Грузія, машына з кіроўцам, трансфер Тбілісі",
       locale: "be_BY"
     },
     hy: {
-      title: "Tengo Ace Ventura | Տուրեր Վրաստանում և տրանսպորտի վարձույթ",
-      description: "Տուրեր Վրաստանում ավտոբուսներով և քրոսովերներով, ավտոբուսի վարձույթ, մեքենա վարորդով, տրանսֆերներ Թբիլիսիից, Կազբեգի, Կախեթի և Մցխեթա։",
-      keywords: "տուրեր Վրաստանում, տուրեր Թբիլիսիից, Կազբեգի տուր, Կախեթի տուր, Մցխեթա տուր, ավտոբուսի վարձույթ Վրաստան, մեքենա վարորդով, տրանսֆեր Թբիլիսի",
+      title: "Go Georgia | Տուրեր Վրաստանում և տրանսպորտի վարձույթ",
+      description: "Տուրեր Վրաստանում ավտոբուսներով և քրոսովերներով, ավտոբուսի վարձույթ, մեքենա վարորդով, տրանսֆերներ Թбիлիсиից, Կazbeги, Կախեθи և Մcxeta։",
+      keywords: "տուրեր Վрастанum, տурер Թбилісиից, Կazbeги тур, Կaxeti тур, Мcxeta тур, ավтобуси варузутh Врастан, мekena varorov, транsfer Тбиліси",
       locale: "hy_AM"
     }
   };
