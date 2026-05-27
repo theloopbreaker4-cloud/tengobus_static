@@ -280,7 +280,7 @@ a {
   position: fixed;
   right: 18px;
   bottom: 18px;
-  z-index: 50;
+  z-index: 101;
   max-width: min(320px, calc(100vw - 36px));
   padding: 12px 14px;
   color: var(--white);
@@ -888,9 +888,9 @@ h3 {
 
   .site-header {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
   }
 
   .brand {
@@ -926,10 +926,7 @@ h3 {
   }
 
   .header-actions {
-    grid-column: 1 / -1;
-    width: 100%;
-    justify-content: center;
-    padding-top: 2px;
+    justify-content: flex-end;
   }
 
   .route-grid,
@@ -945,19 +942,17 @@ h3 {
 }
 
 @media (max-width: 560px) {
-  .site-header {
-    position: static;
-  }
-
   .hero {
-    min-height: 620px;
+    min-height: 560px;
   }
 
-  .hero-road {
+  .hero-road-wrap {
+    width: min(80vw, 360px);
+    height: 120px;
     right: 8px;
-    bottom: 18px;
-    width: 380px;
-    opacity: 0.58;
+    bottom: 16px;
+    opacity: 0.6;
+    transform: none;
   }
 
   .hero-overlay {

@@ -432,6 +432,7 @@
     setText("footerLead", locale.footerText);
     setText("backTopText", locale.buttons.top);
     setAttribute("heroImage", "src", pageContent.hero.image);
+    setAttribute("heroImage", "alt", pageContent.hero.title || "Georgia tour");
 
     document.querySelector(".intro .eyebrow").textContent = locale.intro.eyebrow;
     document.querySelector("#routes .eyebrow").textContent = locale.sections.routesEyebrow;
