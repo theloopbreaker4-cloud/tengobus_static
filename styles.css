@@ -150,6 +150,7 @@ a {
 }
 
 .locale-picker {
+  position: relative;
   display: inline-flex;
   min-height: 42px;
   align-items: center;
@@ -159,6 +160,31 @@ a {
   background: var(--card-bg);
   border: 1px solid var(--line);
   border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.locale-picker:focus {
+  outline: 2px solid var(--leaf);
+  outline-offset: 2px;
+}
+
+.locale-label {
+  font-weight: 700;
+  font-size: 14px;
+  min-width: 26px;
+}
+
+.locale-chevron {
+  width: 14px;
+  height: 14px;
+  color: var(--muted);
+  transition: transform 180ms ease;
+  flex-shrink: 0;
+}
+
+.locale-picker[aria-expanded="true"] .locale-chevron {
+  transform: rotate(180deg);
 }
 
 .locale-flag {
@@ -167,6 +193,7 @@ a {
   overflow: hidden;
   border-radius: 4px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.14);
+  flex-shrink: 0;
 }
 
 .locale-flag svg {
@@ -175,15 +202,57 @@ a {
   height: 100%;
 }
 
-.locale-picker select {
-  min-width: 58px;
-  color: inherit;
-  font: inherit;
-  font-weight: 700;
-  background: transparent;
-  border: 0;
-  outline: 0;
+.locale-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 100;
+  min-width: 160px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+  padding: 4px;
+  display: none;
+}
+
+.locale-picker[aria-expanded="true"] .locale-dropdown {
+  display: block;
+}
+
+.locale-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 7px;
   cursor: pointer;
+  font-size: 14px;
+  transition: background 120ms ease;
+}
+
+.locale-option:hover {
+  background: var(--sky);
+}
+
+.locale-option.active {
+  background: var(--sky);
+  font-weight: 700;
+}
+
+.locale-option-flag {
+  width: 24px;
+  height: 18px;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+  flex-shrink: 0;
+}
+
+.locale-option-flag svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .theme-toggle {

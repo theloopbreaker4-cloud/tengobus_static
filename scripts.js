@@ -406,11 +406,7 @@
     localizeContent(locale);
     root.lang = locale.lang;
     updateSeo(localeCode);
-    const select = document.getElementById("localeSelect");
     setHtml("localeFlag", flagSvgs[localeCode] || flagSvgs.en);
-    if (select) {
-      select.title = locale.name || locale.label;
-    }
 
     locale.nav.forEach(function (label, index) {
       if (navLabels[index]) {
@@ -459,34 +455,77 @@
   };
 
   const setupLocale = function () {
-    const select = document.getElementById("localeSelect");
+    const picker = document.getElementById("localePicker");
+    const dropdown = document.getElementById("localeDropdown");
+    const labelEl = document.getElementById("localeLabel");
     const params = new URLSearchParams(window.location.search);
     const urlLocale = params.get("lang");
-    const savedLocale = urlLocale || localStorage.getItem("locale") || "en";
+    var currentLocale = urlLocale || localStorage.getItem("locale") || "en";
+    if (!locales[currentLocale]) currentLocale = "en";
 
-    if (!select) {
-      applyLocale(savedLocale);
+    if (!picker || !dropdown) {
+      applyLocale(currentLocale);
       return;
     }
 
-    Object.keys(locales).forEach(function (localeCode) {
-      const locale = locales[localeCode];
-      const option = createElement("option", "", locale.label);
-      option.value = localeCode;
-      option.title = locale.name || locale.label;
-      select.appendChild(option);
+    var setActive = function (code) {
+      currentLocale = code;
+      if (labelEl) labelEl.textContent = locales[code].label;
+      dropdown.querySelectorAll(".locale-option").forEach(function (opt) {
+        opt.classList.toggle("active", opt.dataset.code === code);
+      });
+      applyLocale(code);
+    };
+
+    Object.keys(locales).forEach(function (code) {
+      var locale = locales[code];
+      var item = createElement("div", "locale-option");
+      item.dataset.code = code;
+      item.setAttribute("role", "option");
+
+      var flagWrap = createElement("span", "locale-option-flag");
+      flagWrap.innerHTML = flagSvgs[code] || "";
+      var name = createElement("span", "", locale.name || locale.label);
+
+      item.appendChild(flagWrap);
+      item.appendChild(name);
+
+      item.addEventListener("click", function (e) {
+        e.stopPropagation();
+        setActive(code);
+        localStorage.setItem("locale", code);
+        if (window.history && window.location.protocol !== "file:") {
+          window.history.replaceState(null, "", "?lang=" + code + window.location.hash);
+        }
+        picker.setAttribute("aria-expanded", "false");
+        showToast("Language: " + (locale.name || locale.label));
+      });
+
+      dropdown.appendChild(item);
     });
 
-    select.value = locales[savedLocale] ? savedLocale : "en";
-    applyLocale(select.value);
+    setActive(currentLocale);
 
-    select.addEventListener("change", function () {
-      localStorage.setItem("locale", select.value);
-      if (window.history && window.location.protocol !== "file:") {
-        window.history.replaceState(null, "", "?lang=" + select.value + window.location.hash);
+    picker.addEventListener("click", function () {
+      var open = picker.getAttribute("aria-expanded") === "true";
+      picker.setAttribute("aria-expanded", open ? "false" : "true");
+    });
+
+    picker.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        var open = picker.getAttribute("aria-expanded") === "true";
+        picker.setAttribute("aria-expanded", open ? "false" : "true");
       }
-      applyLocale(select.value);
-      showToast("Language changed: " + (locales[select.value].name || locales[select.value].label));
+      if (e.key === "Escape") {
+        picker.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!picker.contains(e.target)) {
+        picker.setAttribute("aria-expanded", "false");
+      }
     });
   };
 

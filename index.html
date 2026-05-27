@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://commons.wikimedia.org">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -162,10 +162,12 @@
         </a>
       </nav>
       <div class="header-actions">
-        <label class="locale-picker" aria-label="Choose language">
+        <div class="locale-picker" id="localePicker" role="combobox" aria-label="Choose language" aria-expanded="false" tabindex="0">
           <span class="locale-flag" id="localeFlag" aria-hidden="true"></span>
-          <select id="localeSelect" title="English"></select>
-        </label>
+          <span class="locale-label" id="localeLabel">EN</span>
+          <svg class="locale-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="locale-dropdown" id="localeDropdown" role="listbox"></div>
+        </div>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
           <svg class="theme-icon sun-icon" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"></circle>
@@ -290,6 +292,6 @@
     </footer>
 
     <script src="data/site.js?v=4"></script>
-    <script src="scripts.js?v=4"></script>
+    <script src="scripts.js?v=7"></script>
   </body>
 </html>
