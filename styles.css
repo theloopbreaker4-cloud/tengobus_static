@@ -292,8 +292,9 @@ a {
 
 .hero-road-wrap {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 34px;
+  bottom: 20px;
+  transform: scale(1.2);
   width: min(52vw, 620px);
   height: 150px;
   overflow: hidden;
@@ -306,7 +307,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  opacity: 0.65;
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -734,10 +735,12 @@ h3 {
 }
 
 @keyframes arrowUp {
+
   0%,
   100% {
     transform: translateY(2px);
   }
+
   50% {
     transform: translateY(-4px);
   }
@@ -748,6 +751,7 @@ h3 {
     opacity: 0;
     transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -761,11 +765,13 @@ h3 {
 }
 
 @keyframes busDrive {
+
   0%,
   100% {
     offset-distance: 0%;
     transform: scale(1);
   }
+
   50% {
     offset-distance: 100%;
     transform: scale(1.08);
@@ -776,12 +782,14 @@ h3 {
   from {
     stroke-dasharray: 20 18;
   }
+
   to {
     stroke-dasharray: 90 14;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -792,6 +800,7 @@ h3 {
 }
 
 @media (max-width: 860px) {
+
   .intro,
   .contacts {
     align-items: flex-start;
@@ -907,6 +916,7 @@ h3 {
 }
 
 @media (max-width: 360px) {
+
   .site-header,
   .section {
     padding-right: 12px;
