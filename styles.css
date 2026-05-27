@@ -292,12 +292,12 @@ a {
 
 .hero-road {
   position: absolute;
-  right: clamp(16px, 5vw, 72px);
-  bottom: clamp(22px, 6vw, 70px);
+  right: 0;
+  bottom: -60px;
   z-index: 0;
-  width: min(48vw, 620px);
-  min-width: 310px;
-  opacity: 0.85;
+  width: min(55vw, 660px);
+  min-width: 280px;
+  opacity: 0.55;
   pointer-events: none;
 }
 
