@@ -290,14 +290,23 @@ a {
     linear-gradient(0deg, rgba(36, 107, 93, 0.26), rgba(200, 77, 58, 0.12));
 }
 
+.hero-road-wrap {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(52vw, 620px);
+  height: 160px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero-road {
   position: absolute;
   right: 0;
-  bottom: -60px;
-  z-index: 0;
-  width: min(55vw, 660px);
-  min-width: 280px;
-  opacity: 0.55;
+  bottom: -30px;
+  width: 100%;
+  opacity: 0.6;
   pointer-events: none;
 }
 
