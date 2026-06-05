@@ -15,7 +15,7 @@ window.siteContent = {
     phone: "+995 571 271 917",
     whatsapp: "995571271917",
     instagram: "https://instagram.com/",
-    email: "hello@example.com"
+    email: "tengizbabalashvili@gmail.com"
   },
   routes: [
     {
