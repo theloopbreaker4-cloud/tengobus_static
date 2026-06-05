@@ -668,19 +668,27 @@
       return;
     }
 
-    const links = [
-      { label: "WhatsApp", href: "https://wa.me/" + pageContent.contacts.whatsapp },
-      { label: pageContent.contacts.phone, href: "tel:" + pageContent.contacts.phone.replace(/\s/g, "") },
-      { label: "Instagram", href: pageContent.contacts.instagram },
-      { label: pageContent.contacts.email, href: "mailto:" + pageContent.contacts.email }
-    ];
+    var isPlaceholder = function (val) {
+      return !val || val === "hello@example.com" || val === "https://instagram.com/" || val.endsWith("000000") || val.endsWith("undefined");
+    };
+
+    var links = [];
+
+    if (!isPlaceholder(pageContent.contacts.whatsapp)) {
+      links.push({ label: "WhatsApp", href: "https://wa.me/" + pageContent.contacts.whatsapp });
+    }
+    if (!isPlaceholder(pageContent.contacts.phone)) {
+      links.push({ label: pageContent.contacts.phone, href: "tel:" + pageContent.contacts.phone.replace(/\s/g, "") });
+    }
+    if (!isPlaceholder(pageContent.contacts.instagram)) {
+      links.push({ label: "Instagram", href: pageContent.contacts.instagram });
+    }
+    if (!isPlaceholder(pageContent.contacts.email)) {
+      links.push({ label: pageContent.contacts.email, href: "mailto:" + pageContent.contacts.email });
+    }
 
     links.forEach(function (link) {
-      if (!link.href || link.href.endsWith("undefined")) {
-        return;
-      }
-
-      const element = createElement("a", "button secondary", link.label);
+      var element = createElement("a", "button secondary", link.label);
       element.href = link.href;
       actions.appendChild(element);
     });
