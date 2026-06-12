@@ -10,7 +10,7 @@ Static landing site for **Go Georgia** — bus tours, crossover trips, vehicle r
 
 ```bash
 # Update site
-ssh root@77.42.74.12 "cd /var/www/gogeorgia && git pull"
+ssh root@SERVER "cd /var/www/gogeorgia && git pull"
 ```
 
 ## Edit content
